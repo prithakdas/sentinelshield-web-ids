@@ -146,14 +146,29 @@ button:hover{
 
 <div class="examples">
 
-<b>Attack Testing Examples:</b>
-
-<span>SQL Injection → ' OR 1=1--</span>
-<span>XSS → &lt;script&gt;alert(1)&lt;/script&gt;</span>
-<span>Directory Traversal → ../../</span>
-<span>LFI → ../../etc/passwd</span>
-<span>Command Injection → ;cat</span>
-
+    <div class="safe-section">
+    <b>Safe Input Examples:</b>
+    
+    <span>admin</span>
+    <span>test</span>
+    <span>user123</span>
+    <span>guest</span>
+    <span>administrator</span>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="attack-section">
+    <b>Attack Testing Examples:</b>
+    
+    <span>SQL Injection → ' OR '1'='1</span>
+    <span>XSS → &lt;script&gt;alert(1)&lt;/script&gt;</span>
+    <span>Directory Traversal → ../../</span>
+    <span>LFI → ../../etc/passwd</span>
+    <span>Command Injection → ;cat</span>
+    </div>
+    
+    </div>
 </div>
 
 <p class="security-note">
