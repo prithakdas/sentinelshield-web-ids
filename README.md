@@ -82,6 +82,7 @@ SentinelShield/
 │   └── dashboard.html
 │
 ├── app.py
+├── requirements.txt
 └── README.md
 ```
 
