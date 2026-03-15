@@ -1,0 +1,11 @@
+[2026-03-14 12:26:49.622979] ALLOWED | IP: 127.0.0.1 | Query: user=admin
+[2026-03-14 12:27:05.313134] ALERT | XSS | IP: 127.0.0.1 | Payload: user=%3Cscript%3Ealert%281%29%3B%3C%2Fscript%3E
+[2026-03-14 12:27:13.130928] ALERT | SQL Injection | IP: 127.0.0.1 | Payload: user=%27+OR+1%3D1
+[2026-03-14 12:27:24.281579] ALERT | Command Injection | IP: 127.0.0.1 | Payload: user=%3Bls
+[2026-03-14 12:27:36.447740] ALERT | LFI | IP: 127.0.0.1 | Payload: user=..%2F..%2Fetc%2Fpasswd
+[2026-03-14 12:27:47.390570] ALERT | Directory Traversal | IP: 127.0.0.1 | Payload: user=..%2F..%2F
+[2026-03-14 12:27:50.511001] ALLOWED | IP: 127.0.0.1 | Query: user=admin
+[2026-03-14 12:27:53.633309] ALERT | XSS | IP: 127.0.0.1 | Payload: user=%3Cscript%3Ealert%281%29%3B%3C%2Fscript%3E
+[2026-03-14 12:27:56.724581] ALLOWED | IP: 127.0.0.1 | Query: user=admin
+[2026-03-14 12:28:00.742509] ALLOWED | IP: 127.0.0.1 | Query: user=test123
+[2026-03-14 12:28:03.864775] BLOCKED | Rate Limit | IP: 127.0.0.1

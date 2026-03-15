@@ -1,0 +1,84 @@
+{
+  "SQL Injection": [
+    "' OR 1=1",
+    "' OR '1'='1",
+    "' OR 1=1--",
+    "' OR '1'='1' --",
+    "UNION SELECT",
+    "UNION ALL SELECT",
+    "SELECT * FROM",
+    "DROP TABLE",
+    "INSERT INTO",
+    "UPDATE SET",
+    "DELETE FROM",
+    "--",
+    "/*",
+    "*/",
+    "xp_cmdshell",
+    "information_schema",
+    "sleep(",
+    "benchmark(",
+    "load_file("
+  ],
+
+  "XSS": [
+    "<script>",
+    "</script>",
+    "javascript:",
+    "onerror=",
+    "onload=",
+    "onclick=",
+    "alert(",
+    "prompt(",
+    "document.cookie",
+    "<img",
+    "<svg",
+    "<iframe",
+    "<body onload",
+    "<input onfocus"
+  ],
+
+  "LFI": [
+    "/etc/passwd",
+    "/etc/shadow",
+    "/proc/self/environ",
+    "/var/log/auth.log",
+    "/var/log/apache2/access.log",
+    "../../etc/passwd",
+    "../../../../../etc/passwd",
+    "..%2f..%2fetc%2fpasswd",
+    "php://input",
+    "php://filter",
+    "file://",
+    "expect://"
+  ],
+
+  "Directory Traversal": [
+    "../",
+    "..\\",
+    "..%2f",
+    "%2e%2e%2f",
+    "%2e%2e\\",
+    "%252e%252e%252f"
+  ],
+
+  "Command Injection": [
+    ";ls",
+    "; ls",
+    ";cat",
+    ";whoami",
+    ";pwd",
+    ";rm",
+    ";curl",
+    ";wget",
+    "&&",
+    "||",
+    "| whoami",
+    "| id",
+    "| cat",
+    "`whoami`",
+    "`id`",
+    "$(whoami)",
+    "bash -i"
+  ]
+}

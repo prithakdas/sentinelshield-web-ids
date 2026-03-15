@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>SentinelShield | Request Analysis</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:#1e293b;
+    padding:40px;
+    border-radius:12px;
+    width:480px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+.card h1{
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    margin-bottom:25px;
+}
+
+.result-box{
+    padding:20px;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+.allowed{
+    background:#052e16;
+    color:#22c55e;
+    font-size:18px;
+}
+
+.blocked{
+    background:#450a0a;
+    color:#ef4444;
+    font-size:18px;
+}
+
+.warning{
+    background:#422006;
+    color:#f59e0b;
+    font-size:18px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    font-size:14px;
+    cursor:pointer;
+    margin:8px;
+}
+
+.home-btn{
+    background:#3b82f6;
+    color:white;
+}
+
+.home-btn:hover{
+    background:#2563eb;
+}
+
+.dashboard-btn{
+    background:#22c55e;
+    color:black;
+}
+
+.dashboard-btn:hover{
+    background:#16a34a;
+}
+
+.info{
+    margin-top:15px;
+    font-size:14px;
+    color:#cbd5f5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>SentinelShield</h1>
+<p class="subtitle">Request Analysis Result</p>
+
+{% if status == "allowed" %}
+
+<div class="result-box allowed">
+✔ Request Allowed
+</div>
+
+<p class="info"><strong>User Input:</strong> {{ user }}</p>
+<p class="info">No malicious patterns were detected in the request.</p>
+
+{% elif status == "attack" %}
+
+<div class="result-box blocked">
+🚨 Attack Detected
+</div>
+
+<p class="info"><strong>Detected Attack:</strong> {{ attack }}</p>
+<p class="info">The request matched a known attack signature and was blocked.</p>
+
+{% elif status == "rate_limit" %}
+
+<div class="result-box warning">
+🚫 Too Many Requests
+</div>
+
+<p class="info">
+Your IP address has exceeded the allowed request threshold.
+</p>
+
+<p class="info">
+Rate limiting is active to prevent abuse or automated scanning.
+</p>
+
+{% endif %}
+
+<br>
+
+<div>
+
+<a href="/">
+<button class="home-btn">Back to Home</button>
+</a>
+
+<a href="/dashboard">
+<button class="dashboard-btn">Open Security Dashboard</button>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

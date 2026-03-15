@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>SentinelShield | Web Intrusion Detection System</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+    padding:0;
+}
+
+.header{
+    text-align:center;
+    margin-top:60px;
+}
+
+.header h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:18px;
+}
+
+.main-card{
+    background:#1e293b;
+    width:520px;
+    margin:50px auto;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+.main-card h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border-radius:8px;
+    border:none;
+    font-size:16px;
+    margin-top:10px;
+}
+
+input:focus{
+    outline:none;
+    box-shadow:0 0 10px #22c55e;
+}
+
+button{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:none;
+    background:#22c55e;
+    color:black;
+    font-weight:bold;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+.dashboard-btn{
+    background:#3b82f6;
+}
+
+.dashboard-btn:hover{
+    background:#2563eb;
+}
+
+.examples{
+    margin-top:25px;
+    background:#020617;
+    padding:15px;
+    border-radius:8px;
+    text-align:left;
+    font-size:14px;
+}
+
+.examples span{
+    display:block;
+    margin-top:6px;
+    color:#f59e0b;
+}
+
+.security-note{
+    margin-top:20px;
+    color:#94a3b8;
+    font-size:13px;
+}
+
+.footer{
+    text-align:center;
+    color:#94a3b8;
+    margin-top:40px;
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>SentinelShield</h1>
+<p class="subtitle">Advanced Intrusion Detection & Web Protection System</p>
+
+</div>
+
+
+<div class="main-card">
+
+<h2>Security Request Testing</h2>
+
+<form action="/login" method="get">
+
+<input type="text" name="user" placeholder="Enter username or attack payload">
+
+<button type="submit">Send Request</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+<button class="dashboard-btn">Open Security Dashboard</button>
+</a>
+
+<div class="examples">
+
+<b>Attack Testing Examples:</b>
+
+<span>SQL Injection → ' OR 1=1--</span>
+<span>XSS → &lt;script&gt;alert(1)&lt;/script&gt;</span>
+<span>Directory Traversal → ../../</span>
+<span>LFI → ../../etc/passwd</span>
+<span>Command Injection → ;cat</span>
+
+</div>
+
+<p class="security-note">
+This interface is designed for educational testing of web attack detection.
+</p>
+
+</div>
+
+
+<div class="footer">
+
+<p>SentinelShield | Web Intrusion Detection & Monitoring System</p>
+
+</div>
+
+</body>
+</html>

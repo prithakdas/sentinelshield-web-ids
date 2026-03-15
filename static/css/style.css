@@ -1,0 +1,104 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+input{
+    width: 100%;
+    max-width: 400px;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+}
+
+/* container */
+.container{
+    width:80%;
+    margin:auto;
+}
+
+/* card panels */
+.card{
+    background:#1e293b;
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
+
+/* dashboard grid */
+.grid{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+/* headings */
+h1{
+    margin-top:30px;
+}
+
+h2{
+    color:#94a3b8;
+}
+
+/* buttons */
+button{
+    width: 100%;
+    max-width: 400px;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    background:#22c55e;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+/* result colors */
+
+.allowed{
+    color:#22c55e;
+    font-size:22px;
+}
+
+.blocked{
+    color:#ef4444;
+    font-size:22px;
+}
+
+.warning{
+    color:#f59e0b;
+    font-size:22px;
+}
+
+/* chart container */
+
+canvas{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+}
+
+.chart-box{
+    width:350px;
+    margin:40px auto;
+}
+
+.chart-box canvas{
+    width:100% !important;
+    height:auto !important;
+}

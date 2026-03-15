@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>SentinelShield | Security Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+}
+
+.header{
+    text-align:center;
+    margin-top:40px;
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:16px;
+}
+
+.dashboard-container{
+    width:90%;
+    margin:40px auto;
+}
+
+.stats-grid{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.stat-card{
+    background:#1e293b;
+    flex:1;
+    min-width:200px;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 12px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:scale(1.03);
+}
+
+.stat-card h2{
+    font-size:16px;
+    color:#94a3b8;
+}
+
+.stat-number{
+    font-size:34px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.chart-section{
+    background:#1e293b;
+    margin-top:40px;
+    padding:30px;
+    border-radius:10px;
+}
+
+.chart-title{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.chart-box{
+    width:400px;
+    margin:0 auto;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:40px;
+}
+
+button{
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    margin:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.home-btn{
+    background:#22c55e;
+    color:black;
+}
+
+.home-btn:hover{
+    background:#16a34a;
+}
+
+.refresh-btn{
+    background:#3b82f6;
+    color:white;
+}
+
+.refresh-btn:hover{
+    background:#2563eb;
+}
+
+.footer{
+    text-align:center;
+    color:#94a3b8;
+    margin-top:40px;
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>SentinelShield Security Dashboard</h1>
+<p class="subtitle">Real-time Intrusion Detection Monitoring</p>
+
+</div>
+
+
+<div class="dashboard-container">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h2>Total Requests</h2>
+<p class="stat-number">{{ total }}</p>
+</div>
+
+<div class="stat-card">
+<h2>Blocked Requests</h2>
+<p class="stat-number">{{ blocked }}</p>
+</div>
+
+<div class="stat-card">
+<h2>Attack Attempts</h2>
+<p class="stat-number">{{ attacks }}</p>
+</div>
+
+<div class="stat-card">
+<h2>Rate Limit Events</h2>
+<p class="stat-number">{{ blocked }}</p>
+</div>
+
+</div>
+
+
+<div class="chart-section">
+
+<h2 class="chart-title">Attack Distribution</h2>
+
+<div class="chart-box">
+<canvas id="attackChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Hidden inputs used by dashboard.js -->
+
+<input type="hidden" id="sql" value="{{ sql }}">
+<input type="hidden" id="xss" value="{{ xss }}">
+<input type="hidden" id="traversal" value="{{ traversal }}">
+<input type="hidden" id="lfi" value="{{ lfi }}">
+<input type="hidden" id="command" value="{{ command }}">
+
+
+<div class="buttons">
+
+<a href="/">
+<button class="home-btn">Back to Home</button>
+</a>
+
+<button class="refresh-btn" onclick="location.reload()">Refresh Data</button>
+
+</div>
+
+
+<div class="footer">
+
+<p>SentinelShield | Web Intrusion Detection & Monitoring System</p>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+</html>
